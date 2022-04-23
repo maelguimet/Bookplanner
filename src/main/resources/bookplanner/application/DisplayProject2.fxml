@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="mainTabRoot" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookplanner.controllers.DisplayProjectController">
+   <stylesheets>
+      <URL value="@style.css"/>
+   </stylesheets>
+   <VBox alignment="CENTER">
+      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0"/>
+      <TreeView fx:id="treeView" minWidth="200.0" onEditCancel="#editCancel" onEditCommit="#updateListOnEdit"
+                onEditStart="#updateOldItemName" onKeyPressed="#updateSelectedItem"
+                onMousePressed="#updateSelectedItem" prefHeight="800.0">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0"/>
+         </VBox.margin>
+         <contextMenu>
+            <ContextMenu fx:id="contextMenu">
+
+            </ContextMenu>
+         </contextMenu>
+      </TreeView>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="NEVER">
+         <Button fx:id="collapse" mnemonicParsing="false" onAction="#collapse" pickOnBounds="false" text="↑↓">
+            <VBox.margin>
+               <Insets bottom="10.0" top="10.0"/>
+            </VBox.margin>
+            <font>
+               <Font size="20.0"/>
+            </font>
+         </Button>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="300.0" spacing="15.0"/>
+   </VBox>
+   <VBox HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+         <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" spacing="30.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="BOTTOM_CENTER" prefHeight="200.0" VBox.vgrow="ALWAYS">
+               <Label fx:id="title" maxWidth="700.0" text="Label">
+                  <HBox.margin>
+                     <Insets bottom="15.0"/>
+                  </HBox.margin>
+                  <font>
+                     <Font name="Cambria Bold" size="20.0"/>
+                  </font>
+               </Label>
+            </HBox>
+         </VBox>
+         <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
+            <TextArea fx:id="descriptionBox" onKeyTyped="#getDescriptionBoxText" promptText="Description"
+                      wrapText="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0"/>
+               </VBox.margin>
+               <font>
+                  <Font name="Cambria" size="16.0"/>
+               </font>
+            </TextArea>
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="200.0" VBox.vgrow="ALWAYS"/>
+      </VBox>
+   </VBox>
+   <VBox alignment="CENTER" maxWidth="300.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets right="20.0"/>
+         </VBox.margin>
+         <Button fx:id="newCharButton" minWidth="200.0" mnemonicParsing="false" onAction="#goToNewChar"
+                 pickOnBounds="false" prefHeight="40.0" prefWidth="200.0" text="NEW CHARACTER">
+            <font>
+               <Font name="Consolas Bold" size="15.0"/>
+            </font>
+         </Button>
+         <Button fx:id="charDBButton" minWidth="200.0" mnemonicParsing="false" onAction="#goToCharDB"
+                 pickOnBounds="false" prefHeight="40.0" prefWidth="200.0" text="CHARACTER DATABASE">
+            <font>
+               <Font name="Consolas Bold" size="15.0"/>
+            </font>
+         </Button>
+         <Button fx:id="exportButton" minWidth="200.0" mnemonicParsing="false" onAction="#export"
+                 pickOnBounds="false" prefHeight="40.0" prefWidth="200.0" text="EXPORT">
+            <font>
+               <Font name="Consolas Bold" size="15.0"/>
+            </font>
+         </Button>
+         <Button fx:id="menuButton" cancelButton="true" minWidth="200.0" mnemonicParsing="false"
+                 onAction="#switchToMenu" pickOnBounds="false" prefHeight="40.0" prefWidth="200.0"
+                 text="MAIN MENU">
+            <font>
+               <Font name="Consolas Bold" size="15.0"/>
+            </font>
+         </Button>
+      </VBox>
+   </VBox>
+</HBox>

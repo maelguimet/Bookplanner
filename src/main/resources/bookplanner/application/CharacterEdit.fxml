@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="bookplanner.controllers.CharacterEditController">
+   <stylesheets>
+      <URL value="@style.css"/>
+   </stylesheets>
+   <VBox alignment="CENTER" prefHeight="800.0" prefWidth="240.0" HBox.hgrow="ALWAYS">
+      <ImageView fx:id="img" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@default.png"/>
+      </ImageView>
+      <Button fx:id="selectPicture" mnemonicParsing="false" onAction="#choosePic" pickOnBounds="false"
+              text="Select Picture">
+         <font>
+            <Font name="Consolas Bold" size="14.0"/>
+         </font>
+         <VBox.margin>
+            <Insets top="15.0"/>
+         </VBox.margin>
+      </Button>
+   </VBox>
+   <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="500.0" spacing="5.0" HBox.hgrow="ALWAYS">
+      <Label fx:id="labelName" text="Name*">
+         <VBox.margin>
+            <Insets top="30.0"/>
+         </VBox.margin>
+         <font>
+            <Font name="Cambria Bold" size="18.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="nameBox" promptText="Name">
+         <font>
+            <Font name="Cambria" size="16.0"/>
+         </font>
+      </TextField>
+      <Label fx:id="labelNickname" text="Nickname">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="nicknameBox" promptText="Nickname">
+         <font>
+            <Font name="Cambria" size="16.0"/>
+         </font>
+      </TextField>
+      <Label fx:id="labelPhys" text="Physical description">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <TextArea fx:id="physBox" prefWidth="591.0" promptText="Physical" wrapText="true">
+         <font>
+            <Font name="Cambria" size="16.0"/>
+         </font>
+      </TextArea>
+      <Label fx:id="labelMoral" text="Moral Description">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <TextArea fx:id="moralBox" prefWidth="591.0" promptText="Moral" wrapText="true">
+         <font>
+            <Font name="Cambria" size="16.0"/>
+         </font>
+      </TextArea>
+      <Label fx:id="labelWeak" text="Weakness">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <TextArea fx:id="weaknessBox" prefWidth="393.0" promptText="Faille" wrapText="true">
+         <font>
+            <Font name="Cambria" size="16.0"/>
+         </font>
+      </TextArea>
+      <Label fx:id="labelNotes" text="Notes">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </Label>
+      <TextArea fx:id="notesBox" prefWidth="591.0" promptText="Notes" wrapText="true">
+         <font>
+            <Font name="Cambria" size="18.0"/>
+         </font>
+      </TextArea>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+         <VBox.margin>
+            <Insets top="30.0"/>
+         </VBox.margin>
+         <Button fx:id="confirm" minHeight="40.0" mnemonicParsing="false" onAction="#goToProfile"
+                 pickOnBounds="false" prefHeight="40.0" prefWidth="150.0" text="Confirm">
+            <font>
+               <Font name="Consolas Bold" size="16.0"/>
+            </font>
+            <HBox.margin>
+               <Insets bottom="30.0"/>
+            </HBox.margin>
+         </Button>
+         <Button fx:id="cancel" cancelButton="true" minHeight="40.0" mnemonicParsing="false"
+                 onAction="#goToProfileNoSave" pickOnBounds="false" prefHeight="40.0" prefWidth="150.0"
+                 text="Cancel">
+            <font>
+               <Font name="Consolas Bold" size="16.0"/>
+            </font>
+            <HBox.margin>
+               <Insets bottom="30.0"/>
+            </HBox.margin>
+         </Button>
+      </HBox>
+   </VBox>
+   <VBox minWidth="200.0" prefHeight="200.0" prefWidth="240.0" HBox.hgrow="ALWAYS"/>
+</HBox>
