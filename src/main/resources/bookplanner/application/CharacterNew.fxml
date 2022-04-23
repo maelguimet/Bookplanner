@@ -15,7 +15,7 @@
    </stylesheets>
    <VBox alignment="CENTER" prefHeight="800.0" prefWidth="240.0" HBox.hgrow="ALWAYS">
       <ImageView fx:id="img" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-         <Image url="@default.png"/>
+         <Image url="@../controllers/default.png"/>
       </ImageView>
       <Button fx:id="selectPicture" mnemonicParsing="false" onAction="#choosePic" pickOnBounds="false"
               text="Select Picture">
